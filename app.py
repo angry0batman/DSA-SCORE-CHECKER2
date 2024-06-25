@@ -48,7 +48,7 @@ def main():
     st.title('DSA Score Prediction App')
     st.write('## Home')
 
-    nav_choice = st.sidebar.radio("Navigation", ["Home", "About"])
+    nav_choice = st.sidebar.radio("Navigation", ["Home", "Return"])
 
     if nav_choice == "Home":
         st.write('### Predict DSA Score')
@@ -72,12 +72,11 @@ def main():
             st.write('### Predictions:')
             st.write(f"Predicted DSA score: {predictions[0]}")
 
-    elif nav_choice == "Return to main page":
-        st.write('## click here to return the home page')
+    elif nav_choice == "Return":
+        st.write('## Return to main page-https://ctc-sure.vercel.app/')
         st.write('This app predicts DSA scores based on manually input algorithm metrics.')
 
-    st.write('---')
-    st.write('Created with Chandan Pandey')
+  
 
 # Run the app
 if __name__ == '__main__':
