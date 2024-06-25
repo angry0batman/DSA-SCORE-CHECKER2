@@ -72,8 +72,8 @@ def main():
             st.write('### Predictions:')
             st.write(f"Predicted DSA score: {predictions[0]}")
 
-    elif nav_choice == "About":
-        st.write('## About')
+    elif nav_choice == "Return to main page":
+        st.write('## click here to return the home page')
         st.write('This app predicts DSA scores based on manually input algorithm metrics.')
 
     st.write('---')
