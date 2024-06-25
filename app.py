@@ -77,7 +77,7 @@ def main():
         st.write('This app predicts DSA scores based on manually input algorithm metrics.')
 
     st.write('---')
-    st.write('Created with ❤️ by Your Name')
+    st.write('Created with Chandan Pandey')
 
 # Run the app
 if __name__ == '__main__':
