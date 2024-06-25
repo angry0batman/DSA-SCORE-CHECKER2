@@ -1,10 +1,8 @@
-# Import necessary libraries
 import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, r2_score
 import joblib
 
 # Load your dataset (assuming df is your DataFrame)
@@ -29,28 +27,22 @@ def load_model():
     return joblib.load('model.joblib')
 
 # Function to make predictions
-# Function to make predictions
 def make_predictions(model, new_data):
-    # Assuming new_data is a list of numerical values
     feature_names = ['basics', 'stl', 'sorting', 'searching', 'graphs', 'trees', 'dynamic programming', 'number theory']
-    
     new_data_processed = np.array(new_data).reshape(1, -1) / 100
-    
-    # Create a DataFrame with feature names
     X_pred = pd.DataFrame(new_data_processed, columns=feature_names)
-    
     predictions = model.predict(X_pred)
     return predictions * 100  # Convert back to original scale
-
 
 # Define the Streamlit app
 def main():
     st.title('DSA Score Prediction App')
-    st.write('## Home')
 
-    nav_choice = st.sidebar.radio("Navigation", ["Home", "Return"])
+    # Top navigation bar
+    nav_choice = st.radio("Navigation", ["Home", "Return"])
 
     if nav_choice == "Home":
+        st.write('## Home')
         st.write('### Predict DSA Score')
 
         st.write('Enter the values for different algorithms (out of 100):')
@@ -73,10 +65,9 @@ def main():
             st.write(f"Predicted DSA score: {predictions[0]}")
 
     elif nav_choice == "Return":
-        st.write('## Return to main page-https://ctc-sure.vercel.app/')
+        st.write('## Return')
+        st.write('### Return to main page - [CTC Sure](https://ctc-sure.vercel.app/)')
         st.write('This app predicts DSA scores based on manually input algorithm metrics.')
-
-  
 
 # Run the app
 if __name__ == '__main__':
